@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
  })
  .catch (() => console.log(err));
  async function main(){
-    await mongoose.connect("mongodb://127.0.0.1:27017/test");
+    await mongoose.connect("mongodb://127.0.0.1:27017/college");
         
  }
  const userSchema = new mongoose.Schema({
@@ -20,4 +20,12 @@ const mongoose = require("mongoose");
    age:48,
   });
   user1.save();
+// User.insertMany([
+//    {name:"Tony",email:"tony@gmail.com",age:44},
+//    {name:"Thor",email:"thor@gmail.com",age:50},
+//    {name:"Peter",email:"peter@gmail.com",age:36},
+//    {name:"Caption",email:"caption@gmail.com",age:40},
+// ]).then((res) => {
+//    console.log(res);
+// });
   
