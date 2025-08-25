@@ -20,7 +20,7 @@ async function main() {
 let chat1 = new chat({
     from:"neha",
     to:"priya",
-    message:"send me your exam sheets",
+    msg:"send me your exam sheets",
     created_at : new Date()
 });
 
