@@ -14,18 +14,22 @@ const mongoose = require("mongoose");
    age:Number,
  });
  const User = mongoose.model("User",userSchema);
+ User.find({age:{$gt:47}})
+ .then((res) => {
+   console.log(res);
+ })
+ .catch((err) => {
+   console.log(err);
+ });
   const user1 = new User({
    name: "Adam",
    email: "adam@gmail.com",
    age:48,
   });
+   const user2 = new User({
+   name: "Evm",
+   email: "evm@gmail.com",
+   age:50,
+  });
   user1.save();
-// User.insertMany([
-//    {name:"Tony",email:"tony@gmail.com",age:44},
-//    {name:"Thor",email:"thor@gmail.com",age:50},
-//    {name:"Peter",email:"peter@gmail.com",age:36},
-//    {name:"Caption",email:"caption@gmail.com",age:40},
-// ]).then((res) => {
-//    console.log(res);
-// });
-  
+  user2.save();
